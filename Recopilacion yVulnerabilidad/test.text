@@ -1,0 +1,81 @@
+Assignment
+Your task is to create a Python program that calculates the total price of items in a shopping
+cart. The cart will contain various items, each with a specific price and quantity. The program
+should accept this information and compute the total cost of the cart.
+Requirements
+
+Define a Dictionary for Item Prices:
+Create a dictionary named itemPrices.
+The keys should be strings representing item names.
+The values should be floating-point numbers representing the prices of the items.
+Populate the Item Prices Dictionary:
+Add at least three items to the itemPrices dictionary.
+Use the following format: "itemName": price.
+Example items (feel free to choose your own):
+"Apple": 0.50
+"Banana": 0.30
+"Milk": 1.50
+Define a Shopping Cart List:
+Create a list named shoppingCart.
+This list should contain dictionaries, each representing an item in the cart.
+Each dictionary should have two key-value pairs:
+itemName: a string denoting the name of the item.
+itemQuantity: an integer denoting the quantity of that item in the cart.
+Populate the Shopping Cart List:
+Add at least three items to the shoppingCart list.
+Use the following format for each item: {"itemName": "item name", "itemQuantity": quantity}.
+Example items (feel free to choose your own):
+{"itemName": "Apple", "itemQuantity": 5}
+{"itemName": "Banana", "itemQuantity": 3}
+{"itemName": "Milk", "itemQuantity": 2}
+Define a Price Calculation Function:
+Create a function named calculatePrice.
+It should take two parameters: itemName and itemQuantity.
+The function should calculate and return the total price for the given item based on its name
+and quantity.
+Calculate the Total Price:
+Iterate through each item in the shoppingCart list.
+For each item, call the calculatePrice function to determine its total cost.
+Maintain a running total of these amounts to determine the total price of the cart.
+Output the Result:
+Print the final total price of the shopping cart.
+Use this code sample as your starting point:
+# Define a dictionary called itemPrices with item names as keys and prices as values
+itemPrices = {
+# Add at least 3 items to the itemPrices dictionary.
+# The keys should be strings, and the values should be floating-point numbers.
+# Example: "Apple": 0.50
+}
+# Define a list called shoppingCart containing dictionaries for each item
+shoppingCart = [
+# Add at least 3 items to the shoppingCart list.
+# Each item should be a dictionary with two key-value pairs:
+# "itemName": item name (string), "itemQuantity": quantity (integer)
+# Example: {"itemName": "Apple", "itemQuantity": 5}
+]
+# Define a function calculatePrice to calculate the total price of an item
+def calculatePrice(itemName, itemQuantity):
+# Fill in this function to calculate the total price of an item
+# based on its name and quantity, using the itemPrices dictionary
+pass
+# Initialize totalPrice to 0.0
+totalPrice = 0.0
+# Iterate through each item in the shoppingCart and calculate its total price
+for item in shoppingCart:
+# Use the calculatePrice function for each item and add to totalPrice
+pass
+# Print the total price of the shopping cart
+print("The total price of the shopping cart is: ${:.2f}".format(totalPrice))
+Grading Criteria
+● Correctly defined itemPrices dictionary with at least 3 items.
+● Properly structured shoppingCart list with at least 3 items, each containing the
+required keys.
+● Accurate calculatePrice function that returns the correct total price for an item.
+● Successful iteration through the shoppingCart list, calculating and summing the total
+prices.
+● Correct final output showing the total price of the cart.
+●
+Submission Instructions
+Submit a single Python script file (.py) that implements the above requirements. Include
+comments in your script to explain each section of the code.
+Use the submission box provided to submit your code.

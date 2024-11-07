@@ -1,29 +1,39 @@
-import os #sirve para interactuar con el sistema operativo
-import smtplib #modulo usado para el envio de los correos
-import ssl #metodo para encriptar las credenciales
+import os  # Importa el módulo para interactuar con el sistema operativo
+import smtplib  # Importa el módulo para enviar correos electrónicos mediante el protocolo SMTP
+import ssl  # Importa el módulo para crear un contexto SSL, que asegura la conexión en redes
 
-SMTP_SERVER = 'smtp.gmail.com'
-EMAIL = 'drizyboyyoung@gmail.com' #os.environ.get('EMAIL') #variable que almacena el correo
-PASSWORD = 'pbel ukhy gxqk xnqv'#os.environ.get('PASSWORD') #variable que almacena la contraseña
-PORT = 587 #este puerto sirve para enviar correos electronicos de forma segura con TLS
-#465 #se usa este puerto(465) por defecto para encriptar la comunicación
+# Configuración del servidor SMTP, email y puerto
+SMTP_SERVER = 'smtp.gmail.com'  # Servidor SMTP de Gmail para enviar correos
+EMAIL = 'drizyboyyoung@gmail.com'  # Dirección de correo electrónico del remitente
+PASSWORD = 'pbel ukhy gxqk xnqv'  # Contraseña de aplicación para autenticar el correo del remitente
+PORT = 587  # Puerto 587 para conexión segura mediante TLS
+# También podría usarse el puerto 465, que es específico para conexiones SSL por defecto
 
-context = ssl.create_default_context()
+# Crear un contexto SSL para asegurar la conexión
+context = ssl.create_default_context()  # Contexto SSL para encriptar los datos de la conexión
 
-with smtplib.SMTP(SMTP_SERVER, PORT) as server:
-    server.ehlo() #indetificarme en el servidor
-    server.starttls(context=context) #proteje y sostiene la conexión
-    server.ehlo() #indetificarme de nuevo en el servidor // pero no es obligatorio ya que la funcion ".starttls()" la llama automaticamente
-    server.login(EMAIL,PASSWORD) #sirve para asegurar la conexión al servidor Gmail SMTP usando la direccion del servidor y el puerto SSL para asegurar que los credenciales esten encriptados
-    #la variable mensaje contiene el texto del correo.
+# Establecer conexión con el servidor SMTP
+with smtplib.SMTP(SMTP_SERVER, PORT) as server:  
+    server.ehlo()  # Identifica la conexión al servidor SMTP
+    server.starttls(context=context)  # Activa TLS para encriptar la conexión de datos
+    server.ehlo()  # Vuelve a identificar la conexión, aunque no es obligatorio ya que starttls() la llama automáticamente
+
+    # Inicia sesión en el servidor SMTP de Gmail con las credenciales encriptadas
+    server.login(EMAIL, PASSWORD)  
+
+    # Definir el mensaje de correo
     MESSAGE = '''\n 
         Subject: Mi primer correo
 
         Hola, 
         
-        Me llamo Carl Chauvin y este es mi primer correo con python.
+        Me llamo Carl Chauvin y este es mi primer correo con Python.
 
         Atentamente,
         ''' 
-    server.sendmail(EMAIL,'nandy239@outlook.es', MESSAGE) #usamos la funccion sendmail() para enviar los correos.
-    print('Correo enviado correctamente!') #sirve para confirmar el envio del correo
+
+    # Enviar el correo
+    server.sendmail(EMAIL, 'nandy239@outlook.es', MESSAGE)  # Usa sendmail() para enviar el mensaje al destinatario
+
+    # Mensaje de confirmación en consola
+    print('Correo enviado correctamente!')  # Informa al usuario que el correo fue enviado

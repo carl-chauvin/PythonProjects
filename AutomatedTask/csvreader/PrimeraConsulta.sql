@@ -1,0 +1,18 @@
+/*SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Products](
+	[id] [int] NOT NULL,
+	[ProductName] [varchar](25) NOT NULL,
+	[Price] [money] NULL,
+	[ProductDescription] [varchar](max) NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Products] ADD PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO*/
+
+SELECT id from dbo.Products
